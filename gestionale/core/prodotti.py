@@ -88,7 +88,7 @@ class Abbonamento:
         return self.prezzo_mensile * self.mesi
 
 
-@dataclass()
+@dataclass(frozen= True)
 class ProdottoRecord:
     name: str
     prezzo_unitario : float

@@ -94,5 +94,39 @@ print(categorie_comuni)
 categorie_esclusive = categorie - categorie2
 print(categorie_esclusive)
 
+categorie_esclusive_simmetrico = categorie ^ categorie2 #differenza simmetrica
+print(categorie_esclusive_simmetrico)
 
+prodotti_ordine_A = {ProdottoRecord("Laptop", 1200.0),
+                     ProdottoRecord("Mause", 250.0),
+                     ProdottoRecord("Tablet", 700.0)}
 
+prodotti_ordine_B = {ProdottoRecord("Laptop2", 1200.0),
+                     ProdottoRecord("Mause2", 250.0),
+                     ProdottoRecord("Tablet2", 700.0)}
+
+#metodi utili per i set
+s = set()
+
+#aggiungere
+s.add(ProdottoRecord("aaa", 20.0)) #aggiungo un elemento
+s.update([ProdottoRecord("aaa", 20.0), ProdottoRecord("bbb", 20.0), ProdottoRecord("ccc", 20.0)]) #aggiungo piu elementi
+
+print(s)
+
+#togliere
+s.remove(ProdottoRecord("aaa", 20.0)) #rimuove un elemento. Raise KeyError se non esiste.
+s.discard(ProdottoRecord("aaa", 20.0)) #rimuove un elemento, senza "arrabbiarsi" se questo non esiste.
+s.pop() #rimuove e restituisce un elemento.
+s.clear() #svuota il set
+
+#operazioni insiemistiche
+s.union(prodotti_ordine_A) # s | prodotti_ordine_A, ovvero genera un set che unisce i due set di partenza
+s.intersection(prodotti_ordine_A) #prende solo elementi comuni
+s.difference(prodotti_ordine_A) #prende elementi di s che non sono contenuti in prodottti_ordine_A
+s.symmetric_difference(prodotti_ordine_A)  # s ^s1, ovvero elementi di s non contenuti in prodottti_ordine_A
+                                            # ed elementi di prodotti_ordine_A non contenuti in s
+
+s.issubset(prodotti_ordine_A) # se gli elementi di s sono contenuti in prodotti_ordine_A
+s.issuperset(prodotti_ordine_A) #se gli elementi di prodotti_ordine_A sono contenuti in s
+s.isdisjoint(prodotti_ordine_A) #se glielementi di prodotti_ordine_A quelli di s sono diversi
