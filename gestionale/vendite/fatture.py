@@ -17,9 +17,9 @@ class Fattura:
             f"=" * 60,
             f"Fattura no. {self.numero_fattura} del {self.data}",
             f"=" * 60,
-            f"Cliente: {self.ordine.cliente.nome}",
+            f"Cliente: {self.ordine.cliente.name}",
             f"Categoria: {self.ordine.cliente.categoria}",
-            f"Mail: {self.ordine.cliente.mail}",
+            f"Mail: {self.ordine.cliente.email}",
             f"=" * 60,
             f"Dettaglio Odine"
         ]

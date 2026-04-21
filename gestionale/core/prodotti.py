@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from flet_core.icons import HAIL
+
 
 class Prodotto:
     aliquota_iva = 0.22 #variabile di classe -- ovvero è la stessa per tutte le istanze che verranno create.
@@ -92,6 +94,12 @@ class Abbonamento:
 class ProdottoRecord:
     name: str
     prezzo_unitario : float
+
+    def __hash__(self):
+        return hash((self.name, self.prezzo_unitario))
+
+    def __str__(self):
+        return f"{self.name} - prezzo unitario: {self.prezzo_unitario}"
 
 
 MAX_QUANTITA = 1000
