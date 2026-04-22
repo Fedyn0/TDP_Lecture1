@@ -34,7 +34,7 @@ class GestoreOrdini:
         print("\n" + "-" * 60)
 
         if not self._ordini_da_processare:
-            print("Non ci sono ordini in coda-")
+            print("Non ci sono ordini in coda")
             return False
 
         # Se esiste, gestiamo il primo in coda
