@@ -26,6 +26,11 @@ class GestoreOrdini:
         print(f"Ricevuto un nuovo oridne da parte di {ordine.cliente}.")
         print(f"Ordini ancora da evadere: {len(self._ordini_da_processare)}")
 
+    def crea_ordine (self, nomeP, prezzoP, quantitaP,
+                     nomeC, mailC, CategoriaC):
+        return Ordine([RigaOrdine(ProdottoRecord(nomeP, prezzoP), quantitaP)],
+                      ClienteRecord(nomeC, mailC, CategoriaC))
+
     def processa_prossimo_ordine(self):
 
         #Assicuriamoci che un ordine da processare esista
